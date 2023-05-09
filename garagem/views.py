@@ -29,3 +29,5 @@ class VeiculoViewSet(ModelViewSet):
         elif self.action == "retrieve":
             return VeiculoDetailSerializer
         return VeiculoSerializer
+    
+    
