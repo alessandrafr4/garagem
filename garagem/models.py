@@ -23,7 +23,7 @@ class Acessorio(models.Model):
         verbose_name = "acessório"
     
 class Cor(models.Model):
-    descricao = models.CharField(max_length=100)
+    descricao = models.CharField(max_length=100) 
 
     def __str__(self):
         return self.descricao 
@@ -38,6 +38,7 @@ class Veiculo(models.Model):
     ano = models.IntegerField(default=0, null=True, blank=True)
     preco = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True, blank=True)
     modelo = models.CharField(max_length=50)
+    acessorio = models.ManyToManyField ( Acessorio , related_name = "veículos" ) 
 
 
     def __str__(self):
