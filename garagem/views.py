@@ -2,6 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from garagem.models import Acessorio,Categoria, Cor, Marca, Veiculo
 from garagem.serializers import  AcessorioSerializer, CategoriaSerializer, CorSerializer, MarcaSerializer,VeiculoListSerializer, VeiculoSerializer, VeiculoDetailSerializer
+from rest_framework.permissions import IsAuthenticated
 
 class AcessorioViewSet(ModelViewSet):
     queryset = Acessorio.objects.all()
@@ -10,7 +11,8 @@ class AcessorioViewSet(ModelViewSet):
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer 
-
+    permission_classes = [IsAuthenticated]
+ 
 class CorViewSet(ModelViewSet):
     queryset = Cor.objects.all()
     serializer_class = CorSerializer 

@@ -14,7 +14,7 @@ class CategoriaSerializer(ModelSerializer):
 
 class CorSerializer(ModelSerializer):
     class Meta:
-        model = Cor 
+        model = Cor  
         fields = "__all__"
  
 
