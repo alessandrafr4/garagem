@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Acessorio(models.Model):
     descricao = models.CharField(max_length=100)
 
@@ -8,4 +9,3 @@ class Acessorio(models.Model):
 
     class Meta:
         verbose_name = "acessório"
-    

@@ -1,9 +1,10 @@
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
+from garagem.models import Veiculo
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
-from garagem.models import Veiculo
- 
+
+
 class VeiculoSerializer(ModelSerializer):
     capa_attachment_key = SlugRelatedField(
         source="capa",
@@ -15,21 +16,20 @@ class VeiculoSerializer(ModelSerializer):
     capa = ImageSerializer(required=False, read_only=True)
 
     class Meta:
-            model = Veiculo
-            fields = "__all__"
+        model = Veiculo
+        fields = "__all__"
+
 
 class VeiculoDetailSerializer(ModelSerializer):
     class Meta:
         model = Veiculo
         fields = "__all__"
-        depth= 1
+        depth = 1
+
     capa = ImageSerializer(required=False)
 
 
 class VeiculoListSerializer(ModelSerializer):
     class Meta:
         model = Veiculo
-        fields = ["id","modelo"]
- 
-
- 
+        fields = ["id", "modelo"]

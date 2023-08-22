@@ -6,8 +6,4 @@ from .models import Usuario
 class UsuarioSerializer(ModelSerializer):
     class Meta:
         model = Usuario
-        fields = "__all__" 
-
-
-
-
+        fields = "__all__"
