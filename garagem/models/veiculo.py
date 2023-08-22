@@ -1,4 +1,6 @@
 from django.db import models
+from uploader.models import Image
+
 
 from garagem.models import Acessorio, Categoria, Cor, Marca
 class Veiculo(models.Model):
@@ -9,6 +11,15 @@ class Veiculo(models.Model):
     preco = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True, blank=True)
     modelo = models.CharField(max_length=50)
     acessorio = models.ManyToManyField ( Acessorio , related_name = "veículos" ) 
+    capa = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+    )
+
 
 
     def __str__(self):
