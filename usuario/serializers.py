@@ -8,4 +8,6 @@ class UsuarioSerializer(ModelSerializer):
         model = Usuario
         fields = "__all__" 
 
-        
+
+
+

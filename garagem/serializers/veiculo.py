@@ -14,9 +14,9 @@ class VeiculoSerializer(ModelSerializer):
     )
     capa = ImageSerializer(required=False, read_only=True)
 
-class Meta:
-        model = Veiculo
-        fields = "__all__"
+    class Meta:
+            model = Veiculo
+            fields = "__all__"
 
 class VeiculoDetailSerializer(ModelSerializer):
     class Meta:
