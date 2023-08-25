@@ -16,6 +16,7 @@ from garagem.views import (
     CategoriaViewSet,
     CorViewSet,
     MarcaViewSet,
+    ModeloViewSet,
     VeiculoViewSet,
 )
 from uploader.router import router as uploader_router
@@ -26,6 +27,8 @@ router.register(r"acessorios", AcessorioViewSet)
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"cores", CorViewSet)
 router.register(r"marcas", MarcaViewSet)
+router.register(r"modelo", ModeloViewSet)
+
 router.register(r"veiculos", VeiculoViewSet)
 
 urlpatterns = [
